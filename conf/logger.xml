@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/heart-baymax-api.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+      <syslogHost>localhost</syslogHost>
+      <facility>SYSLOG</facility>
+      <suffixPattern>heart-baymax-api [%thread] %-5level %logger{36} - %msg%n</suffixPattern>
+    </appender>
+    
+    <!-- Comment the <root> element if you want to disable logging! -->
+    <root level="debug">
+        <!-- <appender-ref ref="STDOUT" /> -->
+        <appender-ref ref="FILE" />
+        <appender-ref ref="SYSLOG" />
+    </root>
+
+</configuration>
