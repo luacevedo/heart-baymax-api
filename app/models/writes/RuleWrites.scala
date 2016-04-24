@@ -9,7 +9,7 @@ trait RuleWrites {
   implicit val conditionWrites: Writes[Condition] = (
     (JsPath \ "type").write[String] and
     (JsPath \ "attribute").write[String] and
-    (JsPath \ "value").write[String]
+    (JsPath \ "value").writeNullable[String]
    )(unlift(Condition.unapply))
 
   implicit val actionWrites: Writes[Action] = (
