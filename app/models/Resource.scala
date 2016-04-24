@@ -1,8 +1,8 @@
 package models
 
-import play.api.libs.json.JsNull
+import play.api.libs.json.{JsValue}
 
 trait Resource {
-  val json = JsNull
+  def getJson(): JsValue
 }
 
