@@ -1,1 +1,0 @@
-web: target/universal/stage/start -Dhttp.port=${PORT}
