@@ -1,6 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/luacevedo/workspace/heart-baymax-api/conf/application.conf,/Users/luacevedo/workspace/heart-baymax-api/target/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/luacevedo/workspace/heart-baymax-api/conf/logger.xml,/Users/luacevedo/workspace/heart-baymax-api/target/classes/logger.xml)[0m
-[0m[[0mdebug[0m] [0m	(/Users/luacevedo/workspace/heart-baymax-api/conf/routes,/Users/luacevedo/workspace/heart-baymax-api/target/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/Users/luacevedo/workspace/heart-baymax-api/conf/scalastyle-config.xml,/Users/luacevedo/workspace/heart-baymax-api/target/classes/scalastyle-config.xml)[0m
-[0m[[0mdebug[0m] [0m	(/Users/luacevedo/workspace/heart-baymax-api/conf/version.conf,/Users/luacevedo/workspace/heart-baymax-api/target/classes/version.conf)[0m
