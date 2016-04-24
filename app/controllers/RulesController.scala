@@ -7,7 +7,7 @@ import scala.concurrent._
 object RulesController extends ResourcesController {
 
   def getRules() = MyAction { request => {
-    Future.successful(Rule())
+    Future.successful(Rule(1, Nil, Nil, Nil))
   }}
 
 }

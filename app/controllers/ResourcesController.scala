@@ -11,7 +11,7 @@ trait ResourcesController extends Controller {
   def MyAction[A](f: Request[AnyContent] => Future[Resource]): Action[AnyContent] = {
     Action.async { request =>
       f(request).map {
-        resource => Ok(resource.json)
+        resource => Ok(resource.getJson())
       }
     }
   }
