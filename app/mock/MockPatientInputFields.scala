@@ -2,7 +2,7 @@ package mock
 
 import models.{FieldValue, InputField, StepInputFields, PreliminaryDiagnosisFieldsResource}
 
-object MockPatientFields {
+object MockPatientInputFields {
 
   def getMockedPreliminaryDiagnosisFields(): PreliminaryDiagnosisFieldsResource = {
 

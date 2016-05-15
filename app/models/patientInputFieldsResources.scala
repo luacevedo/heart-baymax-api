@@ -1,9 +1,9 @@
 package models
 
-import models.writes.PatientFieldsWrites
+import models.writes.PatientInputFieldsWrites
 import play.api.libs.json.{Json, JsValue}
 
-case class PreliminaryDiagnosisFieldsResource(stepInputFields: List[StepInputFields]) extends Resource with PatientFieldsWrites {
+case class PreliminaryDiagnosisFieldsResource(stepInputFields: List[StepInputFields]) extends Resource with PatientInputFieldsWrites {
   override def getJson(): JsValue = Json.toJson(stepInputFields)
 }
 

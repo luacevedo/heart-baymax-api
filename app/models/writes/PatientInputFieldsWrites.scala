@@ -4,7 +4,7 @@ import models._
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
-trait PatientFieldsWrites {
+trait PatientInputFieldsWrites {
 
   implicit val fieldValueWrites: Writes[FieldValue] = (
     (JsPath \ "key").write[String] and
