@@ -3,8 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /                                                        controllers.Application.index
+GET     /                                      controllers.Application.index
 
 # Rules
-GET     /rules                                                   controllers.RulesController.getRules()
+GET     /rules                                 controllers.RulesController.getRules()
+
+# Patient
+GET     /patients/fields                       controllers.PatientsController.getPatientFields(preliminary: Option[Boolean])
 
