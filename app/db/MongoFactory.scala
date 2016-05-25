@@ -23,8 +23,8 @@ object MongoFactory {
 
   }
 
-  def getCollection() = {
-      database.getCollection("test1")
+  def getCollection(collectionName: String) = {
+      database.getCollection(collectionName)
   }
 
 }
