@@ -9,6 +9,8 @@ GET     /                                      controllers.Application.index
 GET     /rules                                 controllers.RulesController.getRules()
 
 # Patient
-GET     /patients/fields                       controllers.PatientsController.getPatientInputFields(preliminary: Option[Boolean])
 GET     /patients/attributes                   controllers.PatientsController.getPatientAttributes()
+
+# Diagnosis fields
+GET     /patients/fields                       controllers.DiagnosisFieldsController.getPatientInputFields(preliminary: Option[Boolean])
 

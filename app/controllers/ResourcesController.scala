@@ -1,5 +1,6 @@
 package controllers
 
+import helpers.ObservableHelper
 import models.Resource
 import play.api.mvc._
 import play.api.libs.concurrent.Execution.Implicits._

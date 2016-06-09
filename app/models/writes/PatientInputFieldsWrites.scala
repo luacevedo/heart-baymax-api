@@ -21,7 +21,7 @@ trait PatientInputFieldsWrites {
    )(unlift(InputField.unapply))
 
   implicit val ruleWrites: Writes[StepInputFields] = (
-    (JsPath \ "step").write[Int] and
+    (JsPath \ "step").write[Double] and
     (JsPath \ "inputFields").write[List[InputField]]
    )(unlift(StepInputFields.unapply))
 

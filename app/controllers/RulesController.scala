@@ -8,14 +8,9 @@ import scala.concurrent._
 
 import helpers.ObservableHelper
 
-object RulesController extends ResourcesController with ObservableHelper {
+object RulesController extends ResourcesController {
 
   def getRules() = MyAction { request => {
-
-    val collection: MongoCollection[Document] = MongoFactory.getCollection("rules")
-
-    println(collection.find().first().results())
-
     Future.successful(MockRules.getMockedRules)
   }}
 

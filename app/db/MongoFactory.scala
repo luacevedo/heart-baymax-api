@@ -5,7 +5,7 @@ import org.mongodb.scala._
 object MongoFactory {
   private val SERVER = "localhost"
   private val PORT   = 27017
-  private val DATABASE = "mytestdb"
+  private val DATABASE = "test1"
 
   val mongoClient: MongoClient = MongoClient()
 

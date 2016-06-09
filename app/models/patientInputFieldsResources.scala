@@ -7,6 +7,6 @@ case class PreliminaryDiagnosisFieldsResource(stepInputFields: List[StepInputFie
   override def getJson(): JsValue = Json.toJson(stepInputFields)
 }
 
-case class StepInputFields(step: Int, inputFields: List[InputField])
+case class StepInputFields(step: Double, inputFields: List[InputField])
 case class InputField(id: Long, labelMessage: String, rootToAffect: String, dataType: String, fieldType: String, values: List[FieldValue])
 case class FieldValue(key: String, value: String)
