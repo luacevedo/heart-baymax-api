@@ -1,3 +1,4 @@
+db.grantRolesToUser( "heroku_1hl7j974", [ { role: "read", db: "test1" } ] );
 db.stepstest02.drop();
 db.stepstest02.insert(
 {
