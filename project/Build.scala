@@ -13,13 +13,9 @@ object ApplicationBuild extends Build {
     val appDependencies: Seq[sbt.ModuleID] = Seq(
         cache,
         ws,
-        // "org.mockito" % "mockito-all" % "1.9.0",
-        // "com.github.mumoshu" %% "play2-memcached" % "0.6.0",
-        // "net.debasishg" %% "redisclient" % "2.13",
+        "com.typesafe.slick" %% "slick" % "3.1.1",
         "org.apache.httpcomponents" % "httpclient" % "4.2.5",
         "org.apache.httpcomponents" % "httpmime" % "4.2.5")
-        // "com.github.tototoshi" %% "scala-csv" % "1.0.0")
-        // "io.reactivex" %% "rxscala" % "0.23.0")
 
     // val showTestOutput = scala.util.Properties.envOrElse("HB_API_TEST_STDOUT", "false") == "true"
 
@@ -41,7 +37,6 @@ object ApplicationBuild extends Build {
             // publishArtifact in (Compile, packageSrc) := false,
             // crossPaths := false,
 
-
             scalacOptions ++= Seq("-feature"),
 
             javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "-XX:MaxPermSize=2048M", "-XX:+CMSClassUnloadingEnabled"),
@@ -55,8 +50,6 @@ object ApplicationBuild extends Build {
                 "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases",
                 "java-net" at "http://download.java.net/maven/2",
                 "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"),
-                // "Spy Repository" at "http://files.couchbase.com/maven2",
-                // "RoundEights" at "http://maven.spikemark.net/roundeights"),
 
             libraryDependencies ++= appDependencies // required to resolve `spymemcached`, the plugin's dependency.
             )
