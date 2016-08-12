@@ -1,63 +1,63 @@
 package mock
 
-import models.{Action, Condition, Rule, RulesResource}
+import models._
 
 object MockRules {
-  def getMockedRules: RulesResource = {
+  def getMockedRules: RulesResponse = {
 
-    def getPulmonaryEdemaRule: Rule = {
-      val conditions = List(Condition("affirmative", "EssentialSymptoms.PulmonaryEdema", None))
-      val actions = List(Action("addNumber", "InitialPhysicalState.EssentialSymptomsAssessment", "3"), Action("addToList", "InitialPhysicalState.EssentialSymptoms", "PulmonaryEdema"))
-      Rule(1, conditions, actions, Nil)
+    def getPulmonaryEdemaRule = {
+      val conditions = List(Condition(1, "affirmative", "EssentialSymptoms.PulmonaryEdema", None, 1))
+      val actions = List(Action(1, "addNumber", "InitialPhysicalState.EssentialSymptomsAssessment", "3", 1), Action(2, "addToList", "InitialPhysicalState.EssentialSymptoms", "PulmonaryEdema", 1))
+      RuleResource(1, conditions, actions, Nil)
     }
 
     def getDyspnoeaRule = {
-      val conditions = List(Condition("affirmative", "EssentialSymptoms.Dyspnoea", None))
-      val actions = List(Action("addNumber", "InitialPhysicalState.EssentialSymptomsAssessment", "3"), Action("addToList", "InitialPhysicalState.EssentialSymptoms", "Dyspnoea"))
-      Rule(2, conditions, actions, Nil)
+      val conditions = List(Condition(2, "affirmative", "EssentialSymptoms.Dyspnoea", None, 2))
+      val actions = List(Action(3, "addNumber", "InitialPhysicalState.EssentialSymptomsAssessment", "3", 2), Action(4, "addToList", "InitialPhysicalState.EssentialSymptoms", "Dyspnoea", 2))
+      RuleResource(2, conditions, actions, Nil)
     }
 
     def getOrthopnoeaRule = {
-      val conditions = List(Condition("affirmative", "EssentialSymptoms.Orthopnoea", None))
-      val actions = List(Action("addNumber", "InitialPhysicalState.EssentialSymptomsAssessment", "2"), Action("addToList", "InitialPhysicalState.EssentialSymptoms", "Orthopnoea"))
-      Rule(3, conditions, actions, Nil)
+      val conditions = List(Condition(3, "affirmative", "EssentialSymptoms.Orthopnoea", None, 3))
+      val actions = List(Action(5, "addNumber", "InitialPhysicalState.EssentialSymptomsAssessment", "2", 3), Action(6, "addToList", "InitialPhysicalState.EssentialSymptoms", "Orthopnoea", 3))
+      RuleResource(3, conditions, actions, Nil)
     }
 
     def getRule4 = {
-      val conditions = List(Condition("greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4")), Condition("contains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema")))
-      val actions = List(Action("assign", "PreliminaryDiagnosis.SymptomsType", "Urgent"))
-      Rule(4, conditions, actions, List(5,6,7,8))
+      val conditions = List(Condition(4, "greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4"), 4), Condition(5, "contains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema"), 4))
+      val actions = List(Action(7, "assign", "PreliminaryDiagnosis.SymptomsType", "Urgent", 4))
+      RuleResource(4, conditions, actions, List(RuleToExclude(5, 4), RuleToExclude(6, 4), RuleToExclude(7, 4), RuleToExclude(8, 4)))
     }
 
     def getRule5 = {
-      val conditions = List(Condition("greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4")), Condition("notContains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema")))
-      val actions = List(Action("assign", "PreliminaryDiagnosis.SymptomsType", "Moderate"))
-      Rule(5, conditions, actions, List(6,7,8))
+      val conditions = List(Condition(6, "greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4"), 5), Condition(7, "notContains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema"), 5))
+      val actions = List(Action(8, "assign", "PreliminaryDiagnosis.SymptomsType", "Moderate", 5))
+      RuleResource(5, conditions, actions, List(RuleToExclude(6, 5), RuleToExclude(7, 5), RuleToExclude(8, 5)))
     }
 
     def getRule6 = {
-      val conditions = List(Condition("lessThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4")),
-        Condition("greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("0")),
-        Condition("contains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema")))
-      val actions = List(Action("assign", "PreliminaryDiagnosis.SymptomsType", "Moderate"))
-      Rule(6, conditions, actions, List(7,8))
+      val conditions = List(Condition(8, "lessThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4"), 6),
+        Condition(9, "greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("0"), 6),
+        Condition(10, "contains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema"), 6))
+      val actions = List(Action(9, "assign", "PreliminaryDiagnosis.SymptomsType", "Moderate", 6))
+      RuleResource(6, conditions, actions, List(RuleToExclude(7, 6), RuleToExclude(8, 6)))
     }
 
     def getRule7 = {
-      val conditions = List(Condition("lessThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4")),
-        Condition("greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("0")),
-        Condition("notContains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema")))
-      val actions = List(Action("assign", "PreliminaryDiagnosis.SymptomsType", "Scarce"))
-      Rule(7, conditions, actions, List(8))
+      val conditions = List(Condition(11, "lessThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("4"), 7),
+        Condition(12, "greaterThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("0"), 7),
+        Condition(13, "notContains", "InitialPhysicalState.EssentialSymptoms", Some("PulmonaryEdema"), 7))
+      val actions = List(Action(10, "assign", "PreliminaryDiagnosis.SymptomsType", "Scarce", 7))
+      RuleResource(7, conditions, actions, List(RuleToExclude(8, 7)))
     }
 
     def getRule8 = {
-      val conditions = List(Condition("lessThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("1")))
-      val actions = List(Action("assign", "PreliminaryDiagnosis.SymptomsType", "None"))
-      Rule(8, conditions, actions, Nil)
+      val conditions = List(Condition(14, "lessThan", "InitialPhysicalState.EssentialSymptomsAssessment", Some("1"), 8))
+      val actions = List(Action(11, "assign", "PreliminaryDiagnosis.SymptomsType", "None", 8))
+      RuleResource(8, conditions, actions, Nil)
     }
 
-    RulesResource(List(
+    RulesResponse(List(
       getPulmonaryEdemaRule, getDyspnoeaRule, getOrthopnoeaRule, getRule4, getRule5, getRule6, getRule7, getRule8
     ))
 
